@@ -46,6 +46,19 @@ function next_question(roundNumber){
         q.qs + "</span>" + "<hr> <br/>" + q.a + "<br/>" +
         q.b + "<br/>" + q.c + "<br/>" + q.d + "<br/>";
 	cur++;
+	start_timer();
+}
+
+function start_timer() {
+	var time = document.getElementById("timer");
+	time.innerHTML = 10;
+	var mytime = setInterval(function() { 
+	var time = document.getElementById("timer");
+	time.innerHTML = time.innerHTML - 1;
+	if (time.innerHTML == 0) {
+		clearInterval(mytime);
+		time.innerHTML = "Time's up";
+	}}, 1000);
 }
 
 function update_score(teamno) {

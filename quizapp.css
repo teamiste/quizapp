@@ -103,6 +103,7 @@ The last argument specifies the size of the shadow.
     font-family: coolvetica;
     font-size: 35px;
     line-height: 50px;
+    text-align: center;
 }
 
 .question{
@@ -110,7 +111,6 @@ The last argument specifies the size of the shadow.
     text-align: center;
 }
 
-/*
 .option1{
     padding: 20px;
     margin: 200px;
@@ -131,16 +131,14 @@ The last argument specifies the size of the shadow.
     margin: 225px;
 }
 
-*/
-
 #nextbutton{
     position: fixed;
-    top: 600px;
-    left: 662px;
+    top: 300px;
+    left: 950px;
     height: 50px;
     width: 50px;
     border-radius: 25px;
-    background-color: #003162;
+    background-color: #000000;
 }
 
 button {
