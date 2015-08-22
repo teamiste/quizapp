@@ -1,0 +1,149 @@
+<!doctype html>
+<head>
+
+    <title>Fresher's Quiz</title>
+
+<!----------------------------------------- -->
+
+    <style>
+
+        /*
+        font-face is used to add fonts to the file.
+        */
+
+        @font-face{
+            font-family: name;
+            src: url("name of the file of the font.");
+        }
+
+        @font-face{
+            font-family : name2;
+            src : url("name2");
+        }
+
+        @font-face{
+            font-family : name3;
+            src : url("name3");
+        }
+
+        /*
+        css reset. set the margin and padding to 0 so that it remains same in all browsers.
+        * acts as an container for all the elements.
+
+        padding means the space between the border and content.
+        padding can be specified of top, right, bottom, left.
+        */
+
+        *{
+            margin : 0px;
+            padding: 0px;
+        }
+
+
+        /*
+        body involves background details.
+        background-image - adds images
+        background-repeat - repeat-x
+                          - repeat-y
+                          - no-repeat
+        Can use shorthand notation
+
+        The background color has been inserted incase the image fails to load.
+
+        */
+
+        body{
+            background-image: url("name");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-color: #121212;
+        }
+
+        /*
+        Element id = divhead
+        If the position is absolute, you need to specify the top and left position of the element.
+
+        line height specifies the gap between the lines of a paragraph of text.
+
+        text-shadow specifies the position of shadow relative to the text.
+        The last argument specifies the size of the shadow.
+
+
+        */
+
+        #logoblink{
+            position: absolute;
+            top: 12px;
+            left:40px;
+
+            height: 70px;
+            width:65%;
+
+            background-color: #232323;
+            border-radius: 10px;
+            color: green;
+
+            font-family: font1;
+            line-height: 80px;
+            text-align: center;
+            font-size: 100px;
+            text-shadow: 0px 0px 5px green;
+        }
+
+
+
+
+    </style>
+
+<!----------------------------------------- -->
+
+    <script>
+
+
+        //-----------------------------------
+        //This chunk is for the blinking name on the top.
+
+        // setinterval calls a function or evaluates an expression in milliseconds
+        // till the clearinterval() is called or the window is closed
+
+        function changeLogoColor(){
+            changecolor = setInterval("changeLogoBlinkColor()", 1000);
+        }
+
+        function changeLogoBlinkColor(){
+            colorvar ++;
+            if (colorvar % 2 == 1){
+                document.getElementById("logoblink").style.color = "red";
+                document.getElementById("logoblink").style.textshadow = "0px 0px 15px red"
+            }
+            else{
+             document.getElementById("logoblink").style.color = "green";
+                document.getElementById("logoblink").style.textshadow = "0px 0px 15px green" ;
+            }
+        }
+        //-------------------------------------
+
+
+    </script>
+
+<!----------------------------------------- -->
+
+</head>
+
+<body onload = "changeLogoColor()">
+
+    <div id = "logoblink">
+        ISTE
+    </div>
+
+    <div id = "slides">
+        <img src = "initialImage.jpg">
+        <div id = "slideshow">
+            <div id = "div0">
+                <span class = "round"> ROUND </span> </br>
+                <span class = "roundno"> 1 </span> </br>
+                <span class = "round1"> Marks alloted = 10 &nbsp</span> </br>
+            </div>
+        </div>
+    </div>
+</body>
