@@ -2,23 +2,29 @@ function createTeam(n){
     return {name : n, score : 0, status : false}
 }
 
+var cur       = 0;
+var cur_team  = 1;
+var cur_round = 1;
+
 var teams = [createTeam("A"), createTeam("B"), createTeam("C"), createTeam("D"), createTeam("E")];
 
-var cur = 0;
-
 function giveObjectOption(qs, ls, n){
-    var question = {qs : qs, a: ls[0], b: ls[1], c: ls[2], d:ls[3], ans:ls[n-1]};
+    var question = {qs : qs, a: ls[0], b: ls[1], c: ls[2], d:ls[3], ans:n-1};
     return question;
 }
 
 function rounds(){
-    var r1 = [
+    var r3 = [
     	giveObjectOption("What is your mother's maiden name?", ["OptionA", "OptionB", "OptionC", "OptionD"], 3),
     	giveObjectOption("Question2", ["OptionA", "OptionB", "OptionC", "OptionD"], 2)
     ]
 
-    var r3 = [
-    	giveObjectOption("Question1", ["OptionA", "OptionB", "OptionC", "OptionD"], 3),
+    var r1 = [
+    	giveObjectOption("Which of the above has/have been declared as Classical Language/Languages by the Government of India?",
+						["Bengali and Kannada only",
+						 "Kannada only",
+					     "Kannada and Telugu only",				
+						 "Bengali, Kannada and Telugu"], 3),
     	giveObjectOption("Question2", ["OptionA", "OptionB", "OptionC", "OptionD"], 2)
     ]
 
@@ -26,21 +32,25 @@ function rounds(){
 }
 
 
-function score_update(option_provided, teamno) {
+function score_update(option_provided) {
 	var r = rounds();
-	var question = r[roundNumber][cur];
-	if (question.ans === option_provided) {
-		teams[teamno].score += 10;
+	var question = r[cur_round-1][cur];
+	console.log(question);
+	console.log(option_provided);
+	if (question.ans == option_provided -1) {
+		teams[cur_team-1].score += 10;
 	}
 	else {
-	 	teams[teamno].score -= 5;
+	 	teams[cur_team-1].score -= 5;
 	}
+	print_all_scores();	
 }
+
 var mytime;
 
-function next_question(roundNumber){
+function next_question(){
 	var r = rounds();
-	var q = r[roundNumber][cur];
+	var q = r[cur_round-1][cur];
 	var question = document.getElementById("question")
     question.innerHTML = q.qs;
     var option1 = document.getElementById("option1");
@@ -51,7 +61,6 @@ function next_question(roundNumber){
     option3.innerHTML = q.c;
     var option4 = document.getElementById("option4");
     option4.innerHTML = q.d;
-
 	cur++;
 	clearInterval(mytime);
 	var time = document.getElementById("timer");
@@ -63,8 +72,8 @@ function next_question(roundNumber){
 			clearInterval(mytime);
 		}
 	}, 1000);
+	cur_team++;
 }
-
 
 function update_score(teamno) {
 	var teamdiv = document.getElementById("team"+(teamno+1));
