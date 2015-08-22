@@ -39,6 +39,7 @@ function next_question(roundNumber){
 	var r = rounds();
 	var q = r[roundNumber][cur];
 	var div = document.getElementById("div0");
-	div.innerHTML = q.qs + "<br/>" + q.a + "<br/>" + q.b + "<br/>" + q.c + "<br/>" + q.d + "<br/>" + div.innerHTML;
+	div.innerHTML = q.qs + "<br/>" + q.a + "<br/>" + q.b + "<br/>" + q.c + "<br/>" + q.d + "<br/>";
 	cur++;
 }
+
