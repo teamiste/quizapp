@@ -13,7 +13,7 @@ function giveObjectOption(qs, ls, n){
 
 function rounds(){
     var r1 = [
-    	giveObjectOption("Question1", ["OptionA", "OptionB", "OptionC", "OptionD"], 3),
+    	giveObjectOption("What is your mother's maiden name?", ["OptionA", "OptionB", "OptionC", "OptionD"], 3),
     	giveObjectOption("Question2", ["OptionA", "OptionB", "OptionC", "OptionD"], 2)
     ]
 
@@ -39,7 +39,9 @@ function next_question(roundNumber){
 	var r = rounds();
 	var q = r[roundNumber][cur];
 	var div = document.getElementById("div0");
-	div.innerHTML = q.qs + "<br/>" + q.a + "<br/>" + q.b + "<br/>" + q.c + "<br/>" + q.d + "<br/>";
+	div.innerHTML = "<span class = \"question\" >" +
+        q.qs + "</span>" + "<hr> <br/>" + q.a + "<br/>" +
+        q.b + "<br/>" + q.c + "<br/>" + q.d + "<br/>";
 	cur++;
 }
 

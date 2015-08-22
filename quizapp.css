@@ -87,20 +87,37 @@ The last argument specifies the size of the shadow.
 #title{
     font-family: coolvetica;
     position: absolute;
-    top: 20px;
-    left: 625px;
+    top: 10px;
+    left: 620px;
     font-size: 70px;
 }
 
 #slides{
     background-color: #898989;
-    opacity: 0.6;
+    opacity: 0.9;
     position: absolute;
-    top: 150px;
-    left: 575px;
+    top: 90px;
+    left: 300px;
+    height: 450px;
+    width: 750px;
+    font-family: coolvetica;
+    font-size: 35px;
+    text-align: center;
+    line-height: 50px;
+}
 
-    height: 150px;
-    width: 350px;
+.question{
+    font-size: 50px;
+}
+
+
+#nextbutton{
+    position: fixed;
+    top: 600px;
+    left: 662px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
 }
 
 button {
