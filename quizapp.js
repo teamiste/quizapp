@@ -1,3 +1,9 @@
+function createTeam(n){
+    return {name : n, score : 0, status : false}
+}
+
+var teams = [createTeam("A"), createTeam("B"), createTeam("C"), createTeam("D"), createTeam("E")];
+
 function giveObjectOption(qs, ls, n){
     var question = {qs : qs, a: ls[0], b: ls[1], c: ls[2], d:[3], ans:ls[n-1]};
     return question;
@@ -16,7 +22,7 @@ function rounds(){
 }
 
 
- 
+
 function score_update(question, option_provided, team) {
 	if (question.ans === option_provided) {
 		team.score += 10;
