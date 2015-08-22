@@ -162,3 +162,8 @@ button {
     outline: none;
     border: none;
 }
+#stop {
+    position: absolute;
+    top: 400px;
+    left: 50px;
+}

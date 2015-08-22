@@ -229,8 +229,9 @@ function roundthree(){
 }
 
 var r;
-
+var mytime;
 function score_update(option_provided) {
+    clearInterval(mytime);
     var question = r[cur-1];
     if (question.ans == option_provided -1) {
         if (cur_round == 3) {
@@ -269,7 +270,6 @@ function score_update(option_provided) {
     print_all_scores();
 }
 
-var mytime;
 
 function setRoundOne() {
     clearInterval(mytime);
@@ -294,7 +294,10 @@ function setRoundThree() {
 }
 
 function next_question(){
+    console.log(cur);
+    console.log(r);
     var q = r[cur];
+    console.log(q);
     var question = document.getElementById("question")
     question.innerHTML = q.qs;
     var option1 = document.getElementById("option1");
@@ -330,4 +333,36 @@ function update_score(teamno) {
 
 function print_all_scores() {
     [0, 1, 2, 3, 4].map(update_score);
+}
+
+var randomInterval;
+var possible_questions = [];
+var i;
+for (i = 1; i <= 20; i++) {
+    possible_questions.push(i);
+}
+var contents_div0;
+
+function random() {
+    var div0 = document.getElementById("div0");
+    contents_div0 = div0.innerHTML;
+    randomInterval = setInterval(function () {
+        div0.innerHTML = possible_questions[Math.floor(Math.random()*possible_questions.length)];
+    }, 500);
+}
+
+function stopRandom() {
+    console.log("stopping");
+    clearInterval(randomInterval);
+    var div0 = document.getElementById("div0");
+    console.log(div0.innerHTML);
+    var x;
+    for (x = 0; x < possible_questions.length; x++) {
+        if (possible_questions[x] == div0.innerHTML){
+            possible_questions.splice(x, 1);
+        }
+    }
+    console.log(possible_questions);
+    cur = div0.innerHTML;
+    div0.innerHTML = contents_div0;
 }
