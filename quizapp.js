@@ -3,7 +3,7 @@ function createTeam(n){
 }
 
 var cur       = 0;
-var cur_team  = 1;
+var cur_team  = 0;
 var cur_round = 1;
 
 var teams = [createTeam("A"), createTeam("B"), createTeam("C"), createTeam("D"), createTeam("E")];
@@ -71,7 +71,7 @@ function rounds(){
 						[" Lebanon",
 						"Syria",
 						"Tunisia",
-						"Egypt",
+						"Egypt"],
 						3),
 		giveObjectOption("The Jonas Brothers gained popularity from which of the following movies (first telecasted on disney channel)",
 						["Night At the museum :2",
@@ -89,7 +89,7 @@ function rounds(){
 						["Indian Statictical Institute of Calcutta",
 						"Indian Institute of Technology,Delhi",
 						"Indian Institute of Technology, Mumbai",
-						"Bharat Sanchar Nigam Ltd",
+						"Bharat Sanchar Nigam Ltd"],
 						1),
 		giveObjectOption("Which American president famously said, \"The only thing we have to fear is fear itself\"?",
 						["J.F. Kennedy",
@@ -131,7 +131,7 @@ function rounds(){
 						["Hero Cycles Ltd.",
 						" Hindustan Motors",
 						"Apollo Tyres",
-						"Maruti Udyog",
+						"Maruti Udyog"],
 						1),
 		giveObjectOption("Which historical monument in India recently got its twitter account?",
 						["Taj Mahal",
@@ -139,8 +139,9 @@ function rounds(){
 						"Red Fort",
 						"Fatehpur Sikri Monuments"],
 						1)
-    ]
+    ];
 
+    console.log(r1);
     return [r1, r3];
 }
 
@@ -186,6 +187,9 @@ function next_question(){
 		}
 	}, 1000);
 	cur_team++;
+	if (cur_team > 5){
+		cur_team = cur_team % 5;
+	}
 }
 
 function update_score(teamno) {
