@@ -28,7 +28,7 @@ function rounds(){
 
 function score_update(option_provided, teamno) {
 	var r = rounds();
-	var question = r[roundNumber][cur];	
+	var question = r[roundNumber][cur];
 	if (question.ans === option_provided) {
 		teams[teamno].score += 10;
 	}
@@ -41,10 +41,17 @@ var mytime;
 function next_question(roundNumber){
 	var r = rounds();
 	var q = r[roundNumber][cur];
-	var div = document.getElementById("div0");
-	div.innerHTML = "<span class = \"question\" >" +
-        q.qs + "</span>" + "<hr> <br/>" + q.a + "<br/>" +
-        q.b + "<br/>" + q.c + "<br/>" + q.d + "<br/>";
+	var question = document.getElementById("question")
+    question.innerHTML = q.qs;
+    var option1 = document.getElementById("option1");
+    option1.innerHTML = q.a;
+    var option2 = document.getElementById("option2");
+    option2.innerHTML = q.b;
+    var option3 = document.getElementById("option3");
+    option3.innerHTML = q.c;
+    var option4 = document.getElementById("option4");
+    option4.innerHTML = q.d;
+
 	cur++;
 	clearInterval(mytime);
 	var time = document.getElementById("timer");
@@ -61,7 +68,7 @@ function next_question(roundNumber){
 
 function update_score(teamno) {
 	var teamdiv = document.getElementById("team"+(teamno+1));
-	teamdiv.innerHTML = teams[teamno].score;	
+	teamdiv.innerHTML = teams[teamno].score;
 }
 
 function print_all_scores() {
