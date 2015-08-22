@@ -26,14 +26,17 @@ function rounds(){
 }
 
 
-function score_update(question, option_provided, team) {
+function score_update(option_provided, teamno) {
+	var r = rounds();
+	var question = r[roundNumber][cur];	
 	if (question.ans === option_provided) {
-		team.score += 10;
+		teams[teamno].score += 10;
 	}
 	else {
-	 	team.score -= 5;
+	 	teams[teamno].score -= 5;
 	}
 }
+
 
 function next_question(roundNumber){
 	var r = rounds();
@@ -45,3 +48,11 @@ function next_question(roundNumber){
 	cur++;
 }
 
+function update_score(teamno) {
+	var teamdiv = document.getElementById("team"+(teamno+1));
+	teamdiv.innerHTML = teams[teamno].score;	
+}
+
+function print_all_scores() {
+	[0, 1, 2, 3, 4].map(update_score);
+}
