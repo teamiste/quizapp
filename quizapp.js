@@ -149,13 +149,39 @@ function rounds(){
 function score_update(option_provided) {
 	var r = rounds();
 	var question = r[cur_round-1][cur-1];
-	console.log(question);
-	console.log(option_provided);
 	if (question.ans == option_provided -1) {
-		teams[cur_team-1].score += 10;
+		if (cur_round == 3) {
+			teams[cur_team-1].score += 10;
+		}
+		else if (cur_round == 1) {
+			var prev = cur_team - 2;
+			var next = (cur_team) % 5;
+			if (prev == -1) {
+				prev = 4;
+			}
+			console.log(prev);
+			console.log(next);
+			teams[prev].score += 5;
+			teams[next].score += 5;
+			teams[cur_team - 1].score += 10;
+		}
 	}
 	else {
-	 	teams[cur_team-1].score -= 5;
+		if (cur_round == 3){
+		 	teams[cur_team-1].score -= 5;
+		}
+		else if (cur_round == 1) {
+			var prev = cur_team -2;
+			var next = cur_team % 5;
+			if (prev === -1)
+				prev = 4;
+			teams[prev].score -= 5;
+			teams[next].score -= 5;
+			teams[cur_team - 1].score += 10;
+			console.log(teams[prev].score);
+			console.log(teams[next].score);
+			console.log(teams[cur_team - 1].score);
+		}
 	}
 	print_all_scores();	
 }
@@ -183,6 +209,7 @@ function next_question(){
 		time.innerHTML = time.innerHTML - 1;
 		if (time.innerHTML == 0) {
 			time.innerHTML = "Time's up."
+			score_update(-1);	
 			clearInterval(mytime);
 		}
 	}, 1000);
