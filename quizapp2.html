@@ -2,8 +2,7 @@
 <head>
 
     <title>Fresher's Quiz</title>
-
-<!----------------------------------------- -->
+    <script src="quizapp.js" type="text/javascript"> </script>
 
     <style>
 
@@ -111,9 +110,14 @@
             width: 350px;
         }
 
+        button {
+           text-decoration: none; 
+        }
+
+
+
     </style>
 
-<!----------------------------------------- -->
 
     <script>
 
@@ -140,27 +144,29 @@
             }
         }
         //-------------------------------------
+        function wrong() {
+            var x = document.getElementById("div0");
+            x.innerHTML = x.innerHTML + "<br /> Wrong!"
+        }
 
-
+        function correct() {
+            var x = document.getElementById("div0");
+            x.innerHTML = x.innerHTML + "<br /> Right!"
+        }
     </script>
-
-<!----------------------------------------- -->
-
 </head>
 
-<body onload = "changeLogoColor()">
+<body>
 
     <div id = "title">
         ISTE
     </div>
 
     <div id = "slides">
-        <img src = "initialImage.jpg">
         <div id = "slideshow">
             <div id = "div0">
-                <span class = "round"> ROUND </span> </br>
-                <span class = "roundno"> 1 </span> </br>
-                <span class = "round1"> Marks alloted = 10 &nbsp</span> </br>
+                <button onClick="next_question(0)"> next</button>
+
             </div>
         </div>
     </div>
