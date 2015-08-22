@@ -148,8 +148,7 @@ function roundthree(){
 var r;
 
 function score_update(option_provided) {
-	var r = rounds();
-	var question = r[cur_round-1][cur-1];
+	var question = r[cur-1];
 	if (question.ans == option_provided -1) {
 		if (cur_round == 3) {
 			teams[cur_team-1].score += 10;
