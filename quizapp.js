@@ -36,7 +36,7 @@ function score_update(option_provided, teamno) {
 	 	teams[teamno].score -= 5;
 	}
 }
-
+var mytime;
 
 function next_question(roundNumber){
 	var r = rounds();
@@ -46,20 +46,18 @@ function next_question(roundNumber){
         q.qs + "</span>" + "<hr> <br/>" + q.a + "<br/>" +
         q.b + "<br/>" + q.c + "<br/>" + q.d + "<br/>";
 	cur++;
-	start_timer();
+	clearInterval(mytime);
+	var time = document.getElementById("timer");
+	time.innerHTML = 30;
+	mytime = setInterval(function() {
+		time.innerHTML = time.innerHTML - 1;
+		if (time.innerHTML == 0) {
+			time.innerHTML = "Time's up."
+			clearInterval(mytime);
+		}
+	}, 1000);
 }
 
-function start_timer() {
-	var time = document.getElementById("timer");
-	time.innerHTML = 10;
-	var mytime = setInterval(function() { 
-	var time = document.getElementById("timer");
-	time.innerHTML = time.innerHTML - 1;
-	if (time.innerHTML == 0) {
-		clearInterval(mytime);
-		time.innerHTML = "Time's up";
-	}}, 1000);
-}
 
 function update_score(teamno) {
 	var teamdiv = document.getElementById("team"+(teamno+1));

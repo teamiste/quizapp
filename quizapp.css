@@ -9,8 +9,8 @@ font-face is used to add fonts to the file.
 }
 
 @font-face{
-    font-family : name2;
-    src : url("name2");
+    font-family : timer;
+    src : url("Square.ttf");
 }
 
 @font-face{
@@ -143,5 +143,9 @@ The last argument specifies the size of the shadow.
 
 button {
     text-decoration: none;
+}
 
+#timer {
+    font-family: timer;
+    font-size: 100px;
 }
