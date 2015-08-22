@@ -29,7 +29,7 @@ function roundone() {
                         2),
         giveObjectOption("Which of the following is not amongst the seven wonders of the Ancient World?",
                         ["The Hanging Gardens of Babylon",
-                        "The Lighthouse of Alexandria", 
+                        "The Lighthouse of Alexandria",
                         "The Stonehenge of Wiltshire",
                         "The Great Pyramid of Giza"],
                         3),
@@ -61,7 +61,7 @@ function roundone() {
                         ["Phosphine",
                         "Ricin",
                         "Lily of the Valley",
-                        "Cyanide"], 
+                        "Cyanide"],
                         2),
         giveObjectOption("To whom was the last telegram sent in India?",
                         ["Pranab Mukherjee",
@@ -75,7 +75,7 @@ function roundone() {
                         "Kotak Mahindra Bank",
                         "Yes bank"],
                         2),
-        giveObjectOption(" The CHARMINAR in Hydrabad was constructed in commemoration of elimination of which disease?"
+        giveObjectOption(" The CHARMINAR in Hydrabad was constructed in commemoration of elimination of which disease?",
                         ["Plague",
                         "Cancer",
                         "Leprosy",
@@ -108,7 +108,7 @@ function roundthree(){
         giveObjectOption("Which of the above has/have been declared as Classical Language/Languages by the Government of India?",
                         ["Bengali and Kannada only",
                          "Kannada only",
-                         "Kannada and Telugu only",             
+                         "Kannada and Telugu only",
                          "Bengali, Kannada and Telugu"], 3),
         giveObjectOption("Which of the following is an element?",
                         ["Ruby",
@@ -151,7 +151,7 @@ function roundthree(){
                         "O2",
                         "N2O",
                         "SO2"],
-                        2), 
+                        2),
         giveObjectOption("Recently, a series of uprisings of people referred to as \"Arab Spring\" originally started from",
                         [" Lebanon",
                         "Syria",
@@ -266,7 +266,7 @@ function score_update(option_provided) {
             console.log(teams[cur_team - 1].score);
         }
     }
-    print_all_scores(); 
+    print_all_scores();
 }
 
 var mytime;
@@ -312,8 +312,8 @@ function next_question(){
     mytime = setInterval(function() {
         time.innerHTML = time.innerHTML - 1;
         if (time.innerHTML == 0) {
-            time.innerHTML = "Time's up."
-            score_update(-1);   
+            time.innerHTML = "<style font-size = 20px> Time's up! </style>"
+            score_update(-1);
             clearInterval(mytime);
         }
     }, 1000);

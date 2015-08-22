@@ -5,12 +5,12 @@
 
 @font-face{
     font-family : timer;
-    src : url("Square.ttf");
+    src : url("MoveLette.ttf");
 }
 
 @font-face{
-    font-family : name3;
-    src : url("name3");
+    font-family : score;
+    src : url("Champagne & Limousines Bold.ttf");
 }
 
 *{
@@ -19,7 +19,7 @@
 }
 
 body{
-    background-image: url("back2.png");
+    background-image: url("back3.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: #121212;
@@ -29,13 +29,13 @@ body{
     font-family: coolvetica;
     position: absolute;
     top: 10px;
-    left: 620px;
+    left: 475px;
     font-size: 70px;
 }
 
 #slides{
-    background-color: #898989;
-    opacity: 0.9;
+    background-color: #E0E0E0;
+    opacity: 0.5;
     position: absolute;
     top: 90px;
     left: 300px;
@@ -45,52 +45,48 @@ body{
     font-size: 40px;
     line-height: 50px;
     text-align: center;
+    border-radius: 10px;
 }
 
+/*
 .option1{
     padding: 20px;
-    margin: 200px;
 }
 
 .option2{
     padding: 20px;
-    margin: 200px;
 }
 
 .option3{
     padding: 20px;
-    margin: 0px;
 }
 
 .option4{
     padding: 20px;
-    margin: 225px;
 }
-
+*/
 #nextbutton{
     position: fixed;
-    top: 300px;
-    left: 950px;
-    height: 50px;
-    width: 50px;
-    border-radius: 25px;
-    background-color: #000000;
+    top: 275px;
+    left: 1100px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    font-size: 25px;
+    background-color: ;
+    box-shadow: 0px 0px 10px #888888;
 }
 
 button {
     text-decoration: none;
 }
 
-#timer {
-    font-family: timer;
-    font-size: 100px;
-}
-
 .question{
     font-size: 70px;
     text-align: center;
+    box-shadow: 0px 0px 20px #888888;
 }
-
+/*
 #option1, #option3{
     text-align: left;
     padding: 10px;
@@ -103,7 +99,7 @@ button {
     line-height: 10px;
     margin: 200px;
 }
-
+*/
 #score {
     position: absolute;
     top: 575px;
@@ -113,7 +109,32 @@ button {
     font-size: 70px;
 }
 
+.option{
+    font-size: 30px;
+    background-color: #E6E6E6;
+    font-weight: 900;
+}
+
+.optionbutton{
+    width: 600px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #888888;
+}
+
 #team1, #team2, #team3, #team4, #team5 {
     text-align: center;
     padding: 10px;
+}
+
+#timer{
+    font-family: timer;
+    position: absolute;
+    top: 300px;
+    left: 50px;
+    height: 200px;
+    width: 200px;
+    font-size: 150px;
+    border-radius: 100px;
+    background-color: gray;
+    text-align: center;
 }
