@@ -34,7 +34,7 @@ function rounds(){
 
 function score_update(option_provided) {
 	var r = rounds();
-	var question = r[cur_round-1][cur];
+	var question = r[cur_round-1][cur-1];
 	console.log(question);
 	console.log(option_provided);
 	if (question.ans == option_provided -1) {
