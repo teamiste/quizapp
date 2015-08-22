@@ -13,12 +13,14 @@ function giveObjectOption(qs, ls, n){
     return question;
 }
 
-function rounds(){
-    var r3 = [
-    	giveObjectOption("What is your mother's maiden name?", ["OptionA", "OptionB", "OptionC", "OptionD"], 3),
-    	giveObjectOption("Question2", ["OptionA", "OptionB", "OptionC", "OptionD"], 2)
-    ]
+function roundone() {
+	var r1 = [
+		giveObjectOption("Hello", ["A", "B", "C", "D"], 2)
+	];
+	return r1;
+}
 
+function roundthree(){
     var r1 = [
     	giveObjectOption("Which of the above has/have been declared as Classical Language/Languages by the Government of India?",
 						["Bengali and Kannada only",
@@ -115,13 +117,13 @@ function rounds(){
 						"Veer Zara",
 						"Ek Tha Tiger"],
 						2),
-		giveObjectOption("The “Accessible India” campaign is associated with which of the following fields?",
+		giveObjectOption("The \"Accessible India\" campaign is associated with which of the following fields?",
 						["Tourism",
 						"Child Education",
 						"Empowerment of Gram Panchyats",
 						"Physically disabled persons"],
 						4),
-		giveObjectOption("The mobile wallet app “Buddy” launched by which bank recently?",
+		giveObjectOption("The mobile wallet app \"Buddy\" launched by which bank recently?",
 						["SBI",
 						"PNB",
 						"HDFC",
@@ -140,11 +142,10 @@ function rounds(){
 						"Fatehpur Sikri Monuments"],
 						1)
     ];
-
-    console.log(r1);
-    return [r1, r3];
+    return r1;
 }
 
+var r;
 
 function score_update(option_provided) {
 	var r = rounds();
@@ -163,7 +164,7 @@ function score_update(option_provided) {
 			console.log(next);
 			teams[prev].score += 5;
 			teams[next].score += 5;
-			teams[cur_team - 1].score += 5;
+			teams[cur_team - 1].score += 100;
 		}
 	}
 	else {
@@ -188,9 +189,29 @@ function score_update(option_provided) {
 
 var mytime;
 
+function setRoundOne() {
+	clearInterval(mytime);
+	var time = document.getElementById("timer");
+	time.innerHTML = "30";
+	r = roundone();
+	cur = 0;
+	cur_round = 1;
+	cur_team = 1;
+}
+
+function setRoundThree() {
+	clearInterval(mytime);
+	var time = document.getElementById("timer");
+	time.innerHTML = "30";
+	console.log("Setting to round three");
+	r = roundthree();
+	console.log(r);
+	cur = 0;
+	cur_round = 3;
+}
+
 function next_question(){
-	var r = rounds();
-	var q = r[cur_round-1][cur];
+	var q = r[cur];
 	var question = document.getElementById("question")
     question.innerHTML = q.qs;
     var option1 = document.getElementById("option1");
