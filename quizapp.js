@@ -163,7 +163,7 @@ function score_update(option_provided) {
 			console.log(next);
 			teams[prev].score += 5;
 			teams[next].score += 5;
-			teams[cur_team - 1].score += 10;
+			teams[cur_team - 1].score += 5;
 		}
 	}
 	else {
@@ -177,7 +177,7 @@ function score_update(option_provided) {
 				prev = 4;
 			teams[prev].score -= 5;
 			teams[next].score -= 5;
-			teams[cur_team - 1].score += 10;
+			teams[cur_team - 1].score -= 5;
 			console.log(teams[prev].score);
 			console.log(teams[next].score);
 			console.log(teams[cur_team - 1].score);
