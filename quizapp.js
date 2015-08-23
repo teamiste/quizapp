@@ -20,6 +20,9 @@ function clear() {
         teams = [createTeam(1, "A"), createTeam(2, "B"), createTeam(3, "C"), createTeam(4, "D"), createTeam(5, "E")];
         console.log("CLEARED");
     }
+    else {
+        eliminateRoundTwo();
+    }
 }
 
 
@@ -369,16 +372,17 @@ function next_question(){
 }
 
 function update_score(teamno) {
-    var teamdiv = document.getElementById("team"+(teamno+1));
-    var t = findTeam(teamno + 1);
-    teamdiv.innerHTML = "(" + (teamno+1) + ") " + t.score;
+    console.log(teamno + 1);
+    var teamdiv = document.getElementById("team"+(teamno));
+    var t = findTeam(teamno);
+    teamdiv.innerHTML = "(" + t.no + ") " + t.score;
 }
 
 function print_all_scores() {
     var lst = []
     var i;
     for (i = 0; i < teams.length; i++) {
-        lst.push(i);
+        lst.push(teams[i].no);
     }
     lst.map(update_score);
     console.log(JSON.stringify(teams));
@@ -449,6 +453,16 @@ function eliminateRoundOne() {
     }
 }
 
+function eliminateRoundTwo() {
+    teams.sort(function(a, b) {
+        return a.score - b.score;
+    });
+
+    teams = teams.slice(1);
+    console.log(teams);
+}
+
+
 function findTeam(teamno) {
     var x = teams.length;
     var i;
@@ -479,3 +493,7 @@ function nextqs(){
     r2q++;
 }
 
+function initRoundTwo() {
+    setround();
+    eliminateRoundOne();
+}
