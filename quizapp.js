@@ -309,6 +309,10 @@ function setRoundOne() {
 }
 
 function setRoundThree() {
+    var random = document.getElementById("random");
+    random.innerHTML = "<button onClick=\"random()\"> Random Numbers </button>"
+    var stop = document.getElementById("stoprandom");
+    stop.innerHTML =  "<button id = \"stop\" onClick=\"stopRandom()\"> Stop </button>"
     clearInterval(mytime);
     var time = document.getElementById("timer");
     time.innerHTML = "30";
@@ -363,7 +367,7 @@ function update_score(teamno) {
 function print_all_scores() {
     [0, 1, 2, 3, 4].map(update_score);
     console.log(JSON.stringify(teams));
-    localStorage.setItem("teams", JSON.stringify(teams));   
+    localStorage.setItem("teams", JSON.stringify(teams));
 }
 
 var randomInterval;

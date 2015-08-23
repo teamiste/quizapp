@@ -31,6 +31,8 @@ body{
     top: 10px;
     left: 475px;
     font-size: 70px;
+    color: #f8da1e;
+    opacity: 0.8;
 }
 
 #slides{
@@ -110,7 +112,7 @@ button {
     font-size: 70px;
     background-color: #f9ceec;
     opacity: 0.8;
-
+    color: #3e0050;
 }
 
 .option{
@@ -136,9 +138,10 @@ button {
     font-size: 150px;
     border-radius: 100px;
     text-align: center;
-    background-color: ;
-    box-shadow: 0px 0px 10px #888888;
-
+    background-color: #E0E0E0;
+    box-shadow: 0px 0px 20px #888888;
+    opacity: 0.8;
+    color: gray;
 }
 
 #roundone{
@@ -152,21 +155,28 @@ button {
     color: lightblue;
 }
 
+#roundtwo{
+    display: block;
+    font-size: 25px;
+    position: absolute;
+    background-color: white;
+    top: 60px;
+    left: 50px;
+    outline: none;
+    border: none;
+    color: lightblue;
+}
+
 
 #roundthree{
     font-size: 25px;
     position: absolute;
     background-color: white;
-    top: 20px;
-    left: 1150px;
+    top: 100px;
+    left: 50px;
     outline: none;
     border: none;
     color: lightblue;
-}
-#stop {
-    position: absolute;
-    top: 400px;
-    left: 50px;
 }
 
 #team1, #team2, #team3, #team4, #team5{
@@ -183,4 +193,30 @@ button {
     font-size: 35px;
     color: #d26bb9;
     font-weight: 750;
+}
+
+#random{
+    position: absolute;
+    top : 20px;
+    left: 1150px;
+    font-size: 25px;
+    background-color: white;
+    outline: none;
+    border: none;
+    color: lightblue;
+}
+
+#stoprandom{
+    position: absolute;
+    top: 60px;
+    left: 1150px;
+    font-size: 25px;
+    background-color: white;
+    outline: none;
+    border: none;
+    color: lightblue;
+}
+
+#printscores{
+
 }
