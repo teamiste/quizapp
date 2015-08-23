@@ -1,12 +1,39 @@
 function createTeam(n){
-    return {name : n, score : 0, status : false}
+    return {name : n, score : 0}
 }
 
 var cur       = 0;
 var cur_team  = 0;
-var cur_round = 1;
+var cur_round;
+cur_round = localStorage.getItem('cur_round');
+if (cur_round == undefined) {
+    cur_round = 1;
+}
+else {
+    cur_round = 3;
+}
+var teams;
 
-var teams = [createTeam("A"), createTeam("B"), createTeam("C"), createTeam("D"), createTeam("E")];
+function clear() {
+    if (cur_round == 1) {
+        localStorage.removeItem("teams");
+        teams = [createTeam("A"), createTeam("B"), createTeam("C"), createTeam("D"), createTeam("E")];
+    }
+    console.log("CLEARED");
+}
+
+
+teams = localStorage.getItem('teams');
+if (teams == undefined){
+    console.log("Undefined!");
+    teams = [createTeam("A"), createTeam("B"), createTeam("C"), createTeam("D"), createTeam("E")];
+}
+else {
+    console.log("Nope, not undefined");
+    teams = JSON.parse(teams);
+}
+console.log("Teams are\n");
+console.log(teams);
 
 function giveObjectOption(qs, ls, n){
     var question = {qs : qs, a: ls[0], b: ls[1], c: ls[2], d:ls[3], ans:n-1};
@@ -333,6 +360,8 @@ function update_score(teamno) {
 
 function print_all_scores() {
     [0, 1, 2, 3, 4].map(update_score);
+    console.log(JSON.stringify(teams));
+    localStorage.setItem("teams", JSON.stringify(teams));   
 }
 
 var randomInterval;
@@ -365,4 +394,24 @@ function stopRandom() {
     console.log(possible_questions);
     cur = div0.innerHTML;
     div0.innerHTML = contents_div0;
+}
+
+function selectteam(teamno) {
+    cur_team = teamno;
+    console.log("Current team changed to " + teamno);
+}
+
+function increase() {
+    teams[cur_team-1].score += 5;
+    print_all_scores();
+}
+
+function decrease() {
+    teams[cur_team-1].score -= 5;
+    print_all_scores();
+}
+
+function setround() {
+    console.log("Storing next round to be 3");
+    localStorage.setItem("cur_round", 3);
 }
