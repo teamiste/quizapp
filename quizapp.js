@@ -324,11 +324,13 @@ function next_question(){
     if (cur_team > 5){
         cur_team = cur_team % 5;
     }
+    var pteam = document.getElementById("presentTeam");
+    pteam.innerHTML = "Team " + cur_team.toString();
 }
 
 function update_score(teamno) {
     var teamdiv = document.getElementById("team"+(teamno+1));
-    teamdiv.innerHTML = teams[teamno].score;
+    teamdiv.innerHTML = "(" + (teamno+1) + ") " + teams[teamno].score;
 }
 
 function print_all_scores() {

@@ -108,6 +108,9 @@ button {
     color: blue;
     font-family: timer;
     font-size: 70px;
+    background-color: #f9ceec;
+    opacity: 0.8;
+
 }
 
 .option{
@@ -122,10 +125,6 @@ button {
     box-shadow: 0px 0px 10px #888888;
 }
 
-#team1, #team2, #team3, #team4, #team5 {
-    text-align: center;
-    padding: 10px;
-}
 
 #timer{
     font-family: timer;
@@ -150,10 +149,11 @@ button {
     left: 50px;
     outline: none;
     border: none;
+    color: lightblue;
 }
 
 
-#roundtwo{
+#roundthree{
     font-size: 25px;
     position: absolute;
     background-color: white;
@@ -161,9 +161,26 @@ button {
     left: 1150px;
     outline: none;
     border: none;
+    color: lightblue;
 }
 #stop {
     position: absolute;
     top: 400px;
     left: 50px;
+}
+
+#team1, #team2, #team3, #team4, #team5{
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+#presentTeam{
+    position: absolute;
+    top: 420px;
+    left: 1100px;
+    font-size: 35px;
+    color: #d26bb9;
+    font-weight: 750;
 }

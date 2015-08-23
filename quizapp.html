@@ -16,34 +16,29 @@
             &nbsp;
             <button id = "nextbutton" onClick="next_question()"> <b>>> </b> </button>
             <div id = "div0">
-                <span id = "question"> Questions </span> <br> <hr>
-               <button onClick="score_update(1)" class = "optionbutton"> <span id = "option1" class = "option">Option1</span></button><br>
-                <button onClick="score_update(2)" class = "optionbutton"><span id = "option2" class = "option">Option2</span></button> <br>
-                <button onClick="score_update(3)" class = "optionbutton"><span id = "option3" class = "option">Option3</span></button><br>
-                <button onClick="score_update(4)" class = "optionbutton"><span id = "option4" class = "option">Option4</span></button><br/>
+                <span id = "question"></span> <br> <hr>
+               <button onClick="score_update(1)" class = "optionbutton"> <span id = "option1" class = "option"></span></button><br>
+                <button onClick="score_update(2)" class = "optionbutton"><span id = "option2" class = "option"></span></button> <br>
+                <button onClick="score_update(3)" class = "optionbutton"><span id = "option3" class = "option"></span></button><br>
+                <button onClick="score_update(4)" class = "optionbutton"><span id = "option4" class = "option"></span></button><br/>
             </div>
         </div>
     </div>
+
+    <div id = "presentTeam">
+        Team
+    </div>
+
     <div id = "timer"> 30 </div>
     <div id = "score">
-        <span id = "team1">
-           00
-        </span>
-        <span id = "team2">
-            00
-        </span>
-        <span id = "team3">
-            00
-        </span>
-        <span id = "team4">
-            00
-        </span>
-        <span id = "team5">
-            00
-        </span>
+        <span id = "team1"> 0 </span>
+        <span id = "team2"> 0 </span>
+        <span id = "team3"> 0 </span>
+        <span id = "team4"> 0 </span>
+        <span id = "team5"> 0 </span>
     </div>
-    <button onClick="setRoundOne()"> round one</button>
-    <button onClick="setRoundThree()"> round three</button>
+    <button onClick="setRoundOne()" id = "roundone"> Round One</button>
+    <button onClick="setRoundThree()" id = "roundthree"> Round Three</button>
     <button onClick="random()"> random numbers! </button>
     <button id = "stop" onClick="stopRandom()"> stop pls. </button>
 </body>
