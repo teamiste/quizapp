@@ -444,7 +444,7 @@ function eliminateRoundOne() {
         teams.sort(function(a, b) {
             return a.score - b.score;
         })
-        teams = teams.slice(2);
+        teams = teams.slice(2)
         console.log(teams);
     }
 }
@@ -458,3 +458,24 @@ function findTeam(teamno) {
     }
     return undefined;
 }
+
+//Round two
+var r2q = 1;
+function nextqs(){
+    if (r2q > 6)
+        return ;
+    var i1 = document.getElementById("image1");
+    var i2 = document.getElementById("image2");
+    var i3 = document.getElementById("image3");
+    var i4 = document.getElementById("image4");
+
+    var folder = "q" + r2q;
+
+    i1.innerHTML = "<img src = \"./" + folder + "/i1\" style=\"width:500px;height:300px;\">";
+    i2.innerHTML = "<img src = \"./" + folder + "/i2\" style=\"width:500px;height:300px;\">";
+    i3.innerHTML = "<img src = \"./" + folder + "/i3\" style=\"width:500px;height:300px;\">";
+    i4.innerHTML = "<img src = \"./" + folder + "/i4\" style=\"width:500px;height:300px;\">";
+
+    r2q++;
+}
+
