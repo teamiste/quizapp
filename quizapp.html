@@ -1,12 +1,12 @@
 <!DOCTYPE html>
+<html>
 <head>
-
     <title>Fresher's Quiz</title>
     <script src="quizapp.js" type="text/javascript"> </script>
     <link rel="stylesheet" type="text/css" href="quizapp.css">
 </head>
 
-<body>
+<body onLoad = "clear()">
     <div id = "title">
         Fresher's Quiz
     </div>
@@ -39,6 +39,9 @@
     </div>
     <button onClick="setRoundOne()" id = "roundone"> Round One</button>
     <button onClick="setRoundThree()" id = "roundthree"> Round Three</button>
+    <a href="round2.html"> round two</a>
     <button onClick="random()"> random numbers! </button>
     <button id = "stop" onClick="stopRandom()"> stop pls. </button>
+    <button onClick = "print_all_scores()"> print </button>
+    <button onClick="clear()"> clear </button>
 </body>
