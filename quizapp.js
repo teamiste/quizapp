@@ -1,5 +1,5 @@
-function createTeam(n){
-    return {name : n, score : 0}
+function createTeam(x, n){
+    return {no:x, name : n, score : 0}
 }
 
 var cur       = 0;
@@ -17,16 +17,16 @@ var teams;
 function clear() {
     if (cur_round == 1) {
         localStorage.removeItem("teams");
-        teams = [createTeam("A"), createTeam("B"), createTeam("C"), createTeam("D"), createTeam("E")];
+        teams = [createTeam(1, "A"), createTeam(2, "B"), createTeam(3, "C"), createTeam(4, "D"), createTeam(5, "E")];
+        console.log("CLEARED");
     }
-    console.log("CLEARED");
 }
 
 
 teams = localStorage.getItem('teams');
 if (teams == undefined){
     console.log("Undefined!");
-    teams = [createTeam("A"), createTeam("B"), createTeam("C"), createTeam("D"), createTeam("E")];
+    teams = [createTeam(1, "A"), createTeam(2, "B"), createTeam(3, "C"), createTeam(4, "D"), createTeam(5, "E")];
 }
 else {
     console.log("Nope, not undefined");
@@ -260,9 +260,10 @@ var mytime;
 function score_update(option_provided) {
     clearInterval(mytime);
     var question = r[cur-1];
-    if (question.ans == option_provided -1) {
+    if (question.ans == option_provided - 1) {
         if (cur_round == 3) {
-            teams[cur_team-1].score += 10;
+            var t = findTeam(cur_team);
+            t.score += 10;
         }
         else if (cur_round == 1) {
             var prev = cur_team - 2;
@@ -272,26 +273,34 @@ function score_update(option_provided) {
             }
             console.log(prev);
             console.log(next);
-            teams[prev].score += 5;
-            teams[next].score += 5;
-            teams[cur_team - 1].score += 100;
+            var tprev = findTeam(prev + 1);
+            var tnext = findTeam(next + 1);
+            var tcur  = findTeam(cur_team);
+            tprev.score += 5;
+            tnext.score += 5;
+            tcur.score += 100;
         }
     }
     else {
         if (cur_round == 3){
-            teams[cur_team-1].score -= 5;
+            var t = findTeam(cur_team);
+            t.score -= 5;
         }
         else if (cur_round == 1) {
             var prev = cur_team -2;
             var next = cur_team % 5;
             if (prev === -1)
                 prev = 4;
-            teams[prev].score -= 5;
-            teams[next].score -= 5;
-            teams[cur_team - 1].score -= 5;
-            console.log(teams[prev].score);
-            console.log(teams[next].score);
-            console.log(teams[cur_team - 1].score);
+            var tprev = findTeam(prev + 1);
+            var tnext = findTeam(next + 1);
+            var tcur = findTeam(cur_team);
+
+            tprev.score -= 5;
+            tnext.score -= 5;
+            tcur.score -= 5;
+            console.log(tprev.score);
+            console.log(tnext.score);
+            console.log(tcur.score);
         }
     }
     print_all_scores();
@@ -305,7 +314,7 @@ function setRoundOne() {
     r = roundone();
     cur = 0;
     cur_round = 1;
-    cur_team = 1;
+    cur_team = 0;
 }
 
 function setRoundThree() {
@@ -321,7 +330,7 @@ function setRoundThree() {
     console.log(r);
     cur = 0;
     cur_round = 3;
-    cur_team = 1;
+    cur_team = teams[0].no;
 }
 
 function next_question(){
@@ -352,8 +361,8 @@ function next_question(){
         }
     }, 1000);
     cur_team++;
-    if (cur_team > 5){
-        cur_team = cur_team % 5;
+    if (cur_team > teams.length){
+        cur_team = cur_team % teams.length;
     }
     var pteam = document.getElementById("presentTeam");
     pteam.innerHTML = "Team " + cur_team.toString();
@@ -361,11 +370,17 @@ function next_question(){
 
 function update_score(teamno) {
     var teamdiv = document.getElementById("team"+(teamno+1));
-    teamdiv.innerHTML = "(" + (teamno+1) + ") " + teams[teamno].score;
+    var t = findTeam(teamno + 1);
+    teamdiv.innerHTML = "(" + (teamno+1) + ") " + t.score;
 }
 
 function print_all_scores() {
-    [0, 1, 2, 3, 4].map(update_score);
+    var lst = []
+    var i;
+    for (i = 0; i < teams.length; i++) {
+        lst.push(i);
+    }
+    lst.map(update_score);
     console.log(JSON.stringify(teams));
     localStorage.setItem("teams", JSON.stringify(teams));
 }
@@ -408,16 +423,38 @@ function selectteam(teamno) {
 }
 
 function increase() {
-    teams[cur_team-1].score += 5;
+    var t = findTeam(cur_team);
+    t.score += 5;
     print_all_scores();
 }
 
 function decrease() {
-    teams[cur_team-1].score -= 5;
+    var t = findTeam(cur_team);
+    t.score -= 5;
     print_all_scores();
 }
 
 function setround() {
     console.log("Storing next round to be 3");
     localStorage.setItem("cur_round", 3);
+}
+
+function eliminateRoundOne() {
+    if (cur_round == 1) {
+        teams.sort(function(a, b) {
+            return a.score - b.score;
+        })
+        teams = teams.slice(2);
+        console.log(teams);
+    }
+}
+
+function findTeam(teamno) {
+    var x = teams.length;
+    var i;
+    for (i = 0; i < x; i++){
+        if (teams[i].no == teamno)
+            return teams[i];
+    }
+    return undefined;
 }
