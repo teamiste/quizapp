@@ -12,6 +12,10 @@
     src : url("Inconsolata.otf");
 }
 
+@font-face{
+    font-family : segoe;
+    src : url("segoeuib.ttf");
+}
 #image1{
     position: absolute;
     top: 0px;
@@ -63,6 +67,7 @@ html{
     outline: none;
     border: none;
     color: lightblue;
+    font-family: segoe;
 }
 
 
@@ -74,6 +79,7 @@ html{
     outline: none;
     border: none;
     color: lightblue;
+    font-family: segoe;
 }
 
 
@@ -85,6 +91,7 @@ html{
     outline: none;
     border: none;
     color: lightblue;
+    font-family: segoe;
 }
 
 
@@ -96,6 +103,7 @@ html{
     outline: none;
     border: none;
     color: lightblue;
+    font-family: segoe;
 }
 
 
@@ -107,6 +115,7 @@ html{
     outline: none;
     border: none;
     color: lightblue;
+    font-family: segoe;
 }
 
 
@@ -200,6 +209,7 @@ html{
     top: 100px;
     left: 72px;
     color: #2F1586;
+    font-family: segoe;
 }
 
 #team2score{
@@ -224,6 +234,7 @@ html{
     top: 230px;
     left: 72px;
     color: #2F1586;
+    font-family: segoe;
 }
 
 #team3score{
@@ -249,6 +260,7 @@ html{
     top: 370px;
     left: 72px;
     color: #2F1586;
+    font-family: segoe;
 }
 
 #team4score{
@@ -273,6 +285,7 @@ html{
     top: 500px;
     left: 72px;
     color: #2F1586;
+    font-family: segoe;
 }
 
 #team5score{
@@ -301,4 +314,5 @@ html{
     top: 640px;
     left: 72px;
     color: #2F1586;
+    font-family: segoe;
 }

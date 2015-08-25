@@ -361,8 +361,7 @@ function next_question(){
     mytime = setInterval(function() {
         time.innerHTML = time.innerHTML - 1;
         if (time.innerHTML == 0) {
-            time.innerHTML = "<style font-size = 20px> Time's up! </style>"
-            score_update(-1);
+            time.innerHTML = "<style font-size = 20px> Time's up! </style>";
             clearInterval(mytime);
         }
     }, 1000);
@@ -505,6 +504,7 @@ function findTeam(teamno) {
 //Round two
 var r2q = 1;
 function nextqs(){
+    print_all_scores();
     if (r2q > 6)
         return ;
     var i1 = document.getElementById("image1");
