@@ -338,7 +338,7 @@ function setRoundThree() {
 
 function next_question(){
     console.log(cur);
-    console.log(r);
+    console.log("r"+r);
     var q = r[cur];
     console.log(q);
     var question = document.getElementById("question")
@@ -377,13 +377,27 @@ function update_score(teamno) {
     var t = findTeam(teamno);
     teamdiv.innerHTML = t.score;
 }
+function remove(teamno) {
+    var x = document.getElementById("team"+teamno+"score");
+    x.style.backgroundColor = "gray";
+    x.fontcolor = "red";
+    x.innerHTML = "You're out";
+    x.style.fontSize = "30px";
+}
 
 function print_all_scores() {
     var lst = []
+    var notinlst = [];
     var i;
     for (i = 0; i < teams.length; i++) {
         lst.push(teams[i].no);
     }
+    for (i = 1; i <=5; i++) {
+        if (lst.indexOf(i) == -1){
+            notinlst.push(i);
+        }
+    }
+    notinlst.map(remove)
     lst.map(update_score);
     console.log(JSON.stringify(teams));
     localStorage.setItem("teams", JSON.stringify(teams));
@@ -398,18 +412,23 @@ for (i = 1; i <= 20; i++) {
 var contents_div0;
 
 function random() {
-    var div0 = document.getElementById("div0");
+    var div0 = document.getElementById("rand");
     contents_div0 = div0.innerHTML;
     randomInterval = setInterval(function () {
         div0.innerHTML = possible_questions[Math.floor(Math.random()*possible_questions.length)];
+        div0.style.color = randomColor();
+        div0.style.backgroundColor = randomColor();
     }, 500);
 }
 
 function stopRandom() {
+    var rand = document.getElementById("rand");
+    rand.innerHTML = "";
+    rand.style.backgroundColor = "";
     console.log("stopping");
     clearInterval(randomInterval);
     var div0 = document.getElementById("div0");
-    console.log(div0.innerHTML);
+    //console.log(div0.innerHTML);
     var x;
     for (x = 0; x < possible_questions.length; x++) {
         if (possible_questions[x] == div0.innerHTML){
@@ -419,6 +438,10 @@ function stopRandom() {
     console.log(possible_questions);
     cur = div0.innerHTML;
     div0.innerHTML = contents_div0;
+}
+
+function randomColor() {
+    return '#' + ('00000' + (Math.random() * 16777216 << 0).toString(16)).substr(-6);
 }
 
 function selectteam(teamno) {

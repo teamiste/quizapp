@@ -211,6 +211,16 @@ button {
     border-radius: 10px;
 }
 
+#rand{
+    position: absolute;
+    top: 110px;
+    left: 400px;
+    height: 550px;
+    width: 550px;
+    font-size: 500px;
+    text-align: center;
+}
+
 #team1{
     position: absolute;
     font-size: 25px;
@@ -330,6 +340,18 @@ button {
 }
 
 #random{
+    position: absolute;
+    top : 20px;
+    left: 1150px;
+    font-size: 25px;
+    background-color: white;
+    outline: none;
+    border: none;
+    color: lightblue;
+}
+
+
+#randomnumber{
     position: absolute;
     top : 20px;
     left: 1150px;

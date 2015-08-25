@@ -7,30 +7,20 @@
 </head>
 
 <body onLoad = "initRoundTwo()">
-	<button class="selectteam" onClick="selectteam(1)">Team 1</button>
-	<button class="selectteam" onClick="selectteam(2)">Team 2</button>
-	<button class="selectteam" onClick="selectteam(3)">Team 3</button>
-	<button class="selectteam" onClick="selectteam(4)">Team 4</button>
-	<button class="selectteam" onClick="selectteam(5)">Team 5</button>
+	<button id="selectteam1" onClick="selectteam(1)">Team 1</button>
+	<button id="selectteam2" onClick="selectteam(2)">Team 2</button>
+	<button id="selectteam3" onClick="selectteam(3)">Team 3</button>
+	<button id="selectteam4" onClick="selectteam(4)">Team 4</button>
+	<button id="selectteam5" onClick="selectteam(5)">Team 5</button>
 	<button class="score_update" onClick="increase()" id = "inc"> ++ </button>
 	<button class="score_update" onClick="decrease()" id = "dec"> -- </button>
 	<button onClick="print_all_scores()" id = "print"> print </button>
 	<div id = "score">
-        <span id = "team1">
-           00
-        </span>
-        <span id = "team2">
-            00
-        </span>
-        <span id = "team3">
-            00
-        </span>
-        <span id = "team4">
-            00
-        </span>
-        <span id = "team5">
-            00
-        </span>
+        <div id = "team1score">  0 <hr> </div> <div id = "team1"> Team A </div>
+        <div id = "team2score">  0 <hr> </div> <div id = "team2"> Team B </div>
+        <div id = "team3score">  0 <hr> </div> <div id = "team3"> Team C </div>
+        <div id = "team4score">  0 <hr> </div> <div id = "team4"> Team D </div>
+        <div id = "team5score">  0 <hr> </div> <div id = "team5"> Team E </div>
     </div>
 
 
@@ -44,7 +34,7 @@
     <div id = "image4"></div>
 </div>
 
-<button onclick="nextqs()">Next</button>
+<button onclick="nextqs()" id = "next">>></button>
 
 </body>
 

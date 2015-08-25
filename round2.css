@@ -50,7 +50,14 @@ html{
     background-repeat: no-repeat;
 }
 
-.selectteam{
+#selectteam1:hover, #selectteam2:hover, #selectteam3:hover, #selectteam4:hover, #selectteam5:hover{
+    color: #F781BE;
+    background-color: #D8D8D8;
+}
+
+#selectteam1{
+    position: absolute;
+    left: 200px;
     font-size: 25px;
     background-color: white;
     outline: none;
@@ -58,38 +65,240 @@ html{
     color: lightblue;
 }
 
+
+#selectteam2{
+    position: absolute;
+    left: 400px;
+    font-size: 25px;
+    background-color: white;
+    outline: none;
+    border: none;
+    color: lightblue;
+}
+
+
+#selectteam3{
+    position: absolute;
+    left: 600px;
+    font-size: 25px;
+    background-color: white;
+    outline: none;
+    border: none;
+    color: lightblue;
+}
+
+
+#selectteam4{
+    position: absolute;
+    left: 800px;
+    font-size: 25px;
+    background-color: white;
+    outline: none;
+    border: none;
+    color: lightblue;
+}
+
+
+#selectteam5{
+    position: absolute;
+    left: 1000px;
+    font-size: 25px;
+    background-color: white;
+    outline: none;
+    border: none;
+    color: lightblue;
+}
+
+
+
 #team1, #team2, #team3, #team4, #team5{}
+
 
 #inc{
     position: absolute;
     top: 100px;
-    left: 1100px;
+    left: 1220px;
     font-size: 50px;
-    background-color: #f4b5f0;
+    height: 75px;
+    width: 75px;
+    background-color: #F5A9BC;
     outline: none;
     border: none;
     color: #5d285a;
-    border-radius: 32px;
+    border-radius: 75px;
     font-family: timer;
+}
+
+#inc:hover{
+    background-color: ##D8D8D8;
 }
 
 #dec{
     position: absolute;
     top: 200px;
-    left: 1200px;
+    left: 1220px;
     font-size: 50px;
-    background-color: #f4b5f0;
+    background-color: #F5A9BC;
     border: none;
+    height: 75px;
+    width: 75px;
     color: #5d285a;
-    border-radius: 32px;
+    border-radius: 75px;
     font-family: timer;
+}
+
+#next:hover{
+    border: none;
+    outline: none;
+    background-color: #F5DA81;
+    box-shadow: 0px 0px 25px #DF3A01;
+}
+
+#next{
+    position: absolute;
+    top: 350px;
+    left: 1220px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    box-shadow: 0px 0px 25px;
+    font-size: 30px;
+    color: #424242;
+    border: none;
 }
 
 #print{
     position: absolute;
     top: 500px;
-    left: 1200px;
+    left: 1220px;
     font-style: timer;
     height: 25px;
     width: 75px;
+    background-color: #
+}
+
+
+#team1score{
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+#team1{
+    position: absolute;
+    font-size: 25px;
+    top: 100px;
+    left: 72px;
+    color: #2F1586;
+}
+
+#team2score{
+    position: absolute;
+    top: 140px;
+    left: 50px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+#team2{
+    position: absolute;
+    font-size: 25px;
+    top: 230px;
+    left: 72px;
+    color: #2F1586;
+}
+
+#team3score{
+    position: absolute;
+    top: 280px;
+    left: 50px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+
+#team3{
+    position: absolute;
+    font-size: 25px;
+    top: 370px;
+    left: 72px;
+    color: #2F1586;
+}
+
+#team4score{
+    position: absolute;
+    top: 410px;
+    left: 50px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+#team4{
+    position: absolute;
+    font-size: 25px;
+    top: 500px;
+    left: 72px;
+    color: #2F1586;
+}
+
+#team5score{
+    position: absolute;
+    top: 550px;
+    left: 50px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+.optionbutton:hover{
+    background-color: red;
+}
+
+#team5{
+    position: absolute;
+    font-size: 25px;
+    top: 640px;
+    left: 72px;
+    color: #2F1586;
 }
