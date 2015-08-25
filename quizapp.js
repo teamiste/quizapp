@@ -281,7 +281,7 @@ function score_update(option_provided) {
             var tcur  = findTeam(cur_team);
             tprev.score += 5;
             tnext.score += 5;
-            tcur.score += 100;
+            tcur.score += 15;
         }
     }
     else {
@@ -298,8 +298,8 @@ function score_update(option_provided) {
             var tnext = findTeam(next + 1);
             var tcur = findTeam(cur_team);
 
-            tprev.score -= 5;
-            tnext.score -= 5;
+            tprev.score -= 10;
+            tnext.score -= 10;
             tcur.score -= 5;
             console.log(tprev.score);
             console.log(tnext.score);
