@@ -416,18 +416,20 @@ function random() {
     contents_div0 = div0.innerHTML;
     randomInterval = setInterval(function () {
         div0.innerHTML = possible_questions[Math.floor(Math.random()*possible_questions.length)];
-        div0.style.color = randomColor();
-        div0.style.backgroundColor = randomColor();
+        //div0.style.color = randomColor();
+        //div0.style.backgroundColor = randomColor();
     }, 500);
 }
 
 function stopRandom() {
     var rand = document.getElementById("rand");
-    rand.innerHTML = "";
-    rand.style.backgroundColor = "";
+    //rand.innerHTML = "";
+    //rand.style.backgroundColor = "";
+    //rand.style.height = "0px";
+    //rand.style.width = "0px";
     console.log("stopping");
     clearInterval(randomInterval);
-    var div0 = document.getElementById("div0");
+    var div0 = document.getElementById("rand");
     //console.log(div0.innerHTML);
     var x;
     for (x = 0; x < possible_questions.length; x++) {
