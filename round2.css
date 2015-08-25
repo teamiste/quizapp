@@ -84,3 +84,12 @@ html{
     border-radius: 32px;
     font-family: timer;
 }
+
+#print{
+    position: absolute;
+    top: 500px;
+    left: 1200px;
+    font-style: timer;
+    height: 25px;
+    width: 75px;
+}

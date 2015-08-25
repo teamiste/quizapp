@@ -322,7 +322,7 @@ function setRoundOne() {
 
 function setRoundThree() {
     var random = document.getElementById("random");
-    random.innerHTML = "<button onClick=\"random()\"> Random Numbers </button>"
+    random.innerHTML = "<button onClick=\"random()\"> Random Numbers </button>";
     var stop = document.getElementById("stoprandom");
     stop.innerHTML =  "<button id = \"stop\" onClick=\"stopRandom()\"> Stop </button>"
     clearInterval(mytime);
@@ -373,9 +373,9 @@ function next_question(){
 
 function update_score(teamno) {
     console.log(teamno + 1);
-    var teamdiv = document.getElementById("team"+(teamno));
+    var teamdiv = document.getElementById("team"+(teamno)+"score");
     var t = findTeam(teamno);
-    teamdiv.innerHTML = "(" + t.no + ") " + t.score;
+    teamdiv.innerHTML = t.score;
 }
 
 function print_all_scores() {
