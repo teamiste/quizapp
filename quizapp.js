@@ -370,7 +370,7 @@ function next_question(){
         cur_team = cur_team % teams.length;
     }
     var pteam = document.getElementById("presentTeam");
-    pteam.innerHTML = "Team " + cur_team.toString();
+    pteam.innerHTML = "Team " + String.fromCharCode(cur_team + 64);
 }
 
 function update_score(teamno) {

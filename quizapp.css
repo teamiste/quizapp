@@ -73,10 +73,12 @@ body{
 }
 */
 
-#nextbutton:hover{
-    background-color: red;
-    box-shadow: 0px 0px 15px red;
 
+#nextbutton:hover{
+    border: none;
+    outline: none;
+    background-color: #F5DA81;
+    box-shadow: 0px 0px 25px #DF3A01;
 }
 
 #nextbutton{
@@ -134,7 +136,6 @@ button {
     font-weight: 900;
 }
 
-
 .optionbutton:hover{
     background-color: red;
 }
@@ -146,7 +147,6 @@ button {
     border-radius: 5px;
     box-shadow: 0px 0px 10px #888888;
 }
-
 
 #timer{
     font-family: timer;
@@ -170,7 +170,7 @@ button {
     color:#FA5882;
     box-shadow: 0px 0px 10px;
     height: 30px;
-    width: 150px;
+    width: 180px;
     font-family: segoe;
 }
 
