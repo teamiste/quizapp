@@ -153,11 +153,13 @@ button {
     color: gray;
 }
 
-#roundone:hover, #roundtwo:hover, #roundthree:hover{
+#roundone:hover, #roundtwo:hover, #roundthree:hover, #random:hover, #stoprandom:hover{
     background-color: #E6E6E6;
     border-radius: 10px;
     color:#FA5882;
     box-shadow: 0px 0px 10px;
+    height: 30px;
+    width: 150px;
 }
 
 #roundone{

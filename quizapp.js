@@ -321,10 +321,6 @@ function setRoundOne() {
 }
 
 function setRoundThree() {
-    var random = document.getElementById("random");
-    random.innerHTML = "<button onClick=\"random()\"> Random Numbers </button>";
-    var stop = document.getElementById("stoprandom");
-    stop.innerHTML =  "<button id = \"stop\" onClick=\"stopRandom()\"> Stop </button>"
     clearInterval(mytime);
     var time = document.getElementById("timer");
     time.innerHTML = "30";
@@ -414,9 +410,9 @@ var contents_div0;
 function random() {
     var div0 = document.getElementById("div0");
     contents_div0 = div0.innerHTML;
-    div0.style.fontSize = "300px";
-    div0.style.color = "#00FFFF";
-    div0.style.textShadow = "2px 2px #ff0000";
+    //div0.style.fontSize = "550px";
+    //div0.style.color = "#00FFFF";
+    //div0.style.textShadow = "0px 0px 50px #0B3B2E";
     randomInterval = setInterval(function () {
         div0.innerHTML = possible_questions[Math.floor(Math.random()*possible_questions.length)];
         //div0.style.color = randomColor();
@@ -426,10 +422,8 @@ function random() {
 
 function stopRandom() {
     var rand = document.getElementById("div0");
-    //rand.innerHTML = "";
-    //rand.style.backgroundColor = "";
-    //rand.style.height = "0px";
-    //rand.style.width = "0px";
+    //div0.style.fontSize = "550px";
+    //div0.style.color = "#00FFFF";
     console.log("stopping");
     clearInterval(randomInterval);
     var div0 = document.getElementById("div0");
