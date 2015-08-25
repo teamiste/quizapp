@@ -63,6 +63,12 @@ function roundone() {
                         "The Stonehenge of Wiltshire",
                         "The Great Pyramid of Giza"],
                         3),
+        giveObjectOption("Which of the following android version will succeed lollipop?",
+                        ["Marshmallow",
+                        "Milkshake",
+                        "MarsBar",
+                        "Mocha"],
+                        1),
         giveObjectOption("The United Nations declared the year 2015 as which of the following international years?",
                         ["International Year of Soils",
                         "International Year of Pulses",
@@ -130,6 +136,7 @@ function roundone() {
                         "Dr.Shashi Tharoor"],
                         3)
     ];
+    console.log(r1.length);
     return r1;
 }
 
