@@ -412,8 +412,11 @@ for (i = 1; i <= 20; i++) {
 var contents_div0;
 
 function random() {
-    var div0 = document.getElementById("rand");
+    var div0 = document.getElementById("div0");
     contents_div0 = div0.innerHTML;
+    div0.style.fontSize = "300px";
+    div0.style.color = "#00FFFF";
+    div0.style.textShadow = "2px 2px #ff0000";
     randomInterval = setInterval(function () {
         div0.innerHTML = possible_questions[Math.floor(Math.random()*possible_questions.length)];
         //div0.style.color = randomColor();
@@ -422,14 +425,14 @@ function random() {
 }
 
 function stopRandom() {
-    var rand = document.getElementById("rand");
+    var rand = document.getElementById("div0");
     //rand.innerHTML = "";
     //rand.style.backgroundColor = "";
     //rand.style.height = "0px";
     //rand.style.width = "0px";
     console.log("stopping");
     clearInterval(randomInterval);
-    var div0 = document.getElementById("rand");
+    var div0 = document.getElementById("div0");
     //console.log(div0.innerHTML);
     var x;
     for (x = 0; x < possible_questions.length; x++) {

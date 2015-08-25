@@ -211,15 +211,6 @@ button {
     border-radius: 10px;
 }
 
-#rand{
-    position: absolute;
-    top: 110px;
-    left: 400px;
-    height: 550px;
-    width: 550px;
-    font-size: 500px;
-    text-align: center;
-}
 
 #team1{
     position: absolute;
