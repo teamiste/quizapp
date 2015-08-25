@@ -5,7 +5,7 @@
 
 @font-face{
     font-family : timer;
-    src : url("MoveLette.ttf");
+    src : url("Inconsolata.otf");
 }
 
 @font-face{
@@ -48,6 +48,7 @@ body{
     line-height: 50px;
     text-align: center;
     border-radius: 10px;
+    box-shadow: 0px 0px 30px;
 }
 
 /*
@@ -67,6 +68,13 @@ body{
     padding: 20px;
 }
 */
+
+#nextbutton:hover{
+    background-color: red;
+    box-shadow: 0px 0px 15px red;
+
+}
+
 #nextbutton{
     position: fixed;
     top: 275px;
@@ -103,6 +111,7 @@ button {
     margin: 200px;
 }
 */
+/*
 #score {
     position: absolute;
     top: 575px;
@@ -114,7 +123,7 @@ button {
     opacity: 0.8;
     color: #3e0050;
 }
-
+*/
 .option{
     font-size: 30px;
     background-color: #E6E6E6;
@@ -144,6 +153,13 @@ button {
     color: gray;
 }
 
+#roundone:hover, #roundtwo:hover, #roundthree:hover{
+    background-color: #E6E6E6;
+    border-radius: 10px;
+    color:#FA5882;
+    box-shadow: 0px 0px 10px;
+}
+
 #roundone{
     font-size: 25px;
     position: absolute;
@@ -167,7 +183,6 @@ button {
     color: lightblue;
 }
 
-
 #roundthree{
     font-size: 25px;
     position: absolute;
@@ -179,11 +194,130 @@ button {
     color: lightblue;
 }
 
-#team1, #team2, #team3, #team4, #team5{
-    padding: 10px;
-    height: 50px;
-    width: 50px;
+
+#team1score{
+    position: absolute;
+    top: 550px;
+    left: 200px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
     text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+#team1{
+    position: absolute;
+    font-size: 25px;
+    top: 635px;
+    left: 226px;
+    color: #2F1586;
+}
+
+#team2score{
+    position: absolute;
+    top: 550px;
+    left: 400px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+#team2{
+    position: absolute;
+    font-size: 25px;
+    top: 635px;
+    left: 426px;
+    color: #2F1586;
+}
+
+#team3score{
+    position: absolute;
+    top: 550px;
+    left: 600px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+
+#team3{
+    position: absolute;
+    font-size: 25px;
+    top: 635px;
+    left: 626px;
+    color: #2F1586;
+}
+
+#team4score{
+    position: absolute;
+    top: 550px;
+    left: 800px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+#team4{
+    position: absolute;
+    font-size: 25px;
+    top: 635px;
+    left: 826px;
+    color: #2F1586;
+}
+
+#team5score{
+    position: absolute;
+    top: 550px;
+    left: 1000px;
+    padding: 5px;
+    height: 110px;
+    width: 130px;
+    text-align: center;
+    font-family: timer;
+    font-size: 70px;
+    background-color: #E2FF5B;
+    opacity: 0.8;
+    color: #3e0050;
+    border-radius: 10px;
+}
+
+.optionbutton:hover{
+    background-color: red;
+}
+
+#team5{
+    position: absolute;
+    font-size: 25px;
+    top: 635px;
+    left: 1026px;
+    color: #2F1586;
 }
 
 #presentTeam{
