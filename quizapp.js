@@ -25,6 +25,7 @@ function clear() {
     }
 }
 
+var teamindex;
 
 teams = localStorage.getItem('teams');
 if (teams == undefined){
@@ -272,7 +273,7 @@ function score_update(option_provided) {
     var question = r[cur-1];
     if (question.ans == option_provided - 1) {
         if (cur_round == 3) {
-            var t = findTeam(cur_team);
+            var t = teams[teamindex];
             t.score += 10;
         }
         else if (cur_round == 1) {
@@ -293,7 +294,7 @@ function score_update(option_provided) {
     }
     else {
         if (cur_round == 3){
-            var t = findTeam(cur_team);
+            var t = teams[teamindex];
             t.score -= 5;
         }
         else if (cur_round == 1) {
@@ -325,6 +326,7 @@ function setRoundOne() {
     cur = 0;
     cur_round = 1;
     cur_team = 0;
+    teamindex = -1;
 }
 
 function setRoundThree() {
@@ -337,6 +339,7 @@ function setRoundThree() {
     cur = 0;
     cur_round = 3;
     cur_team = teams[0].no;
+    teamindex = -1;
 }
 
 function next_question(){
@@ -365,10 +368,13 @@ function next_question(){
             clearInterval(mytime);
         }
     }, 1000);
-    cur_team++;
-    if (cur_team > teams.length){
-        cur_team = cur_team % teams.length;
+    teamindex++;
+    if (teamindex >= teams.length){
+        teamindex = teamindex % (teams.length);
     }
+    console.log(teamindex);
+    cur_team = teams[teamindex].no;
+    console.log(cur_team)
     var pteam = document.getElementById("presentTeam");
     pteam.innerHTML = "Team " + String.fromCharCode(cur_team + 64);
 }
@@ -416,19 +422,23 @@ var contents_div0;
 function random() {
     var div0 = document.getElementById("div0");
     contents_div0 = div0.innerHTML;
-    //div0.style.fontSize = "550px";
-    //div0.style.color = "#00FFFF";
-    //div0.style.textShadow = "0px 0px 50px #0B3B2E";
+    div0.style.fontSize = "550px";
+    div0.style.textShadow = "0px 0px 50px #0B3B2E";
+    div0.style.opacity = "1";
     randomInterval = setInterval(function () {
         div0.innerHTML = possible_questions[Math.floor(Math.random()*possible_questions.length)];
+        div0.style.color = randomColor();
         //div0.style.color = randomColor();
         //div0.style.backgroundColor = randomColor();
     }, 500);
 }
 
 function stopRandom() {
-    var rand = document.getElementById("div0");
-    //div0.style.fontSize = "550px";
+    var div0 = document.getElementById("div0");
+    div0.style.fontSize = "30px";
+    div0.style.color = "";
+    div0.style.textShadow = "";
+    div0.style.opacity = "0.8";
     //div0.style.color = "#00FFFF";
     console.log("stopping");
     clearInterval(randomInterval);
