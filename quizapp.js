@@ -537,3 +537,12 @@ function initRoundTwo() {
     setround();
     eliminateRoundOne();
 }
+
+function updateScore(teamno, newscore) {
+    var x;
+    for (x = 0; x < teams.length; x++){
+        if (teams[x].no == teamno) {
+            teams[x].score = newscore;
+        }
+    }
+}
