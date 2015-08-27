@@ -104,7 +104,7 @@ function roundone() {
                         ["Pranab Mukherjee",
                         "Manmohan Singh",
                         "Rahul Gandhi",
-                        "August 23 2013"],
+                        "Indira Gandhi"],
                         3),
         giveObjectOption("Which bank's slogan is THE BANKER TO EVERY INDIAN?",
                         ["HDFC Bank",
@@ -365,6 +365,7 @@ function next_question(){
         time.innerHTML = time.innerHTML - 1;
         if (time.innerHTML == 0) {
             time.innerHTML = "<style font-size = 20px> Time's up! </style>";
+            score_update(-1);
             clearInterval(mytime);
         }
     }, 1000);
